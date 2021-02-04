@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useRef, useCallback } from "react";
 import {
   Image,
@@ -155,6 +156,14 @@ const SignUp: React.FC = () => {
       </BackToSignIn>
     </>
   );
+=======
+import React from "react";
+
+import { Container } from "./styles";
+
+const SignUp: React.FC = () => {
+  return <Container />;
+>>>>>>> 69cd58b00a8defbb549d6baed4db0a1b26a38001
 };
 
 export default SignUp;

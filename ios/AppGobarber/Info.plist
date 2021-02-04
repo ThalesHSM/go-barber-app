@@ -53,11 +53,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+<<<<<<< HEAD
 	<key>UIAppFonts</key>
 	<array>
 	<string>RobotoSlab-Medium.tff</string>
 	<string>RobotoSlab-Regular.tff</string>
 	<string>Feather.tff</string>
 	</array>
+=======
+>>>>>>> 69cd58b00a8defbb549d6baed4db0a1b26a38001
 </dict>
 </plist>

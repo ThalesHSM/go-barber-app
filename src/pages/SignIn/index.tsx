@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useCallback, useRef } from "react";
 import {
   Image,
@@ -136,6 +137,21 @@ const SignIn: React.FC = () => {
         <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
+=======
+import React from "react";
+import { Image } from "react-native";
+
+import { Container, Title } from "./styles";
+
+import logoImg from "../../assets/logo.png";
+
+const SignIn: React.FC = () => {
+  return (
+    <Container>
+      <Image source={logoImg} />
+      <Title>Faça seu login</Title>
+    </Container>
+>>>>>>> 69cd58b00a8defbb549d6baed4db0a1b26a38001
   );
 };
 
