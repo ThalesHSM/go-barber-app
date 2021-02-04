@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useCallback, useRef } from "react";
 import {
   Image,
@@ -15,6 +14,8 @@ import { Form } from "@unform/mobile";
 import { FormHandles } from "@unform/core";
 import * as Yup from "yup";
 import getValidationErrors from "../../util/getValidationErrors";
+
+import { useAuth } from "../../context/AuthContext";
 
 import Input from "../../components/input";
 import Button from "../../components/Button";
@@ -40,38 +41,43 @@ const SignIn: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
 
-  const handleSignIn = useCallback(async (data: SignInFormData) => {
-    try {
-      formRef.current?.setErrors({});
+  const { signIn } = useAuth();
 
-      const schema = Yup.object().shape({
-        email: Yup.string()
-          .required("E-mail obrigatório")
-          .email("Digite um email válido"),
-        password: Yup.string().required("Senha obrigatória"),
-      });
-      await schema.validate(data, {
-        abortEarly: false,
-      });
+  const handleSignIn = useCallback(
+    async (data: SignInFormData) => {
+      try {
+        formRef.current?.setErrors({});
 
-      //        await signIn({
-      //        email: data.email,
-      //      password: data.password,
-      //  });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(err);
-        formRef.current?.setErrors(errors);
+        const schema = Yup.object().shape({
+          email: Yup.string()
+            .required("E-mail obrigatório")
+            .email("Digite um email válido"),
+          password: Yup.string().required("Senha obrigatória"),
+        });
+        await schema.validate(data, {
+          abortEarly: false,
+        });
 
-        return;
+        await signIn({
+          email: data.email,
+          password: data.password,
+        });
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+
+          return;
+        }
+
+        Alert.alert(
+          "Erro na Autenticação",
+          "Ocorreu um erro ao fazer login. Cheque as credenciais"
+        );
       }
-
-      Alert.alert(
-        "Erro na Autenticação",
-        "Ocorreu um erro ao fazer login. Cheque as credenciais"
-      );
-    }
-  }, []);
+    },
+    [signIn]
+  );
   return (
     <>
       <KeyboardAvoidingView
@@ -137,21 +143,6 @@ const SignIn: React.FC = () => {
         <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
-=======
-import React from "react";
-import { Image } from "react-native";
-
-import { Container, Title } from "./styles";
-
-import logoImg from "../../assets/logo.png";
-
-const SignIn: React.FC = () => {
-  return (
-    <Container>
-      <Image source={logoImg} />
-      <Title>Faça seu login</Title>
-    </Container>
->>>>>>> 69cd58b00a8defbb549d6baed4db0a1b26a38001
   );
 };
 
