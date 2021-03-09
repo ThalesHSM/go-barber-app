@@ -14,7 +14,7 @@ const AuthRoutes: React.FC = () => (
     }}
   >
     <Auth.Screen name="SignIn" component={SignIn} />
-    <Auth.Screen name="SingUp" component={SingUp} />
+    <Auth.Screen name="SignUp" component={SingUp} />
   </Auth.Navigator>
 );
 

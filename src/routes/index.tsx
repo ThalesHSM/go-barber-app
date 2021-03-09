@@ -5,6 +5,7 @@ import AuthRoutes from "./auth.route";
 import AppRoutes from "./app.routes";
 
 import { useAuth } from "../context/AuthContext";
+import Dashboard from "../pages/Dashboard";
 
 const Routes: React.FC = () => {
   const { user, loading } = useAuth();
@@ -17,7 +18,7 @@ const Routes: React.FC = () => {
     );
   }
 
-  return user ? <AppRoutes /> : <AuthRoutes />;
+  return user ? <AppRoutes /> : <Dashboard />;
 };
 
 export default Routes;

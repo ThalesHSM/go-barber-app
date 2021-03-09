@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-<<<<<<< HEAD
 import { Platform } from "react-native";
 import { getBottomSpace } from "react-native-iphone-x-helper";
 
@@ -12,7 +11,7 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-size: 24px;
-  color: "#f4ede8";
+  color: #f4ede8;
   font-family: "RobotoSlab-Medium";
   margin: 64px 0 24px;
 `;
@@ -37,7 +36,3 @@ export const BackToSignInText = styled.Text`
   font-family: "RobotoSlab-Regular";
   margin-left: 16px;
 `;
-=======
-
-export const Container = styled.View``;
->>>>>>> 69cd58b00a8defbb549d6baed4db0a1b26a38001

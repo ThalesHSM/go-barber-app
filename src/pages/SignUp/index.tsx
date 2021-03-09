@@ -18,7 +18,7 @@ import api from "../../services/api";
 import getValidationErrors from "../../util/getValidationErrors";
 
 import Input from "../../components/input";
-import Button from "../../components/Button";
+import Button from "../../components/button";
 
 import { Container, Title, BackToSignIn, BackToSignInText } from "./styles";
 
@@ -132,22 +132,21 @@ const SignUp: React.FC = () => {
                 }}
                 ref={passwordInputRef}
               />
-
-              <Button
-                onPress={() => {
-                  formRef.current?.submitForm();
-                }}
-              >
-                Entrar
-              </Button>
             </Form>
+            <Button
+              onPress={() => {
+                formRef.current?.submitForm();
+              }}
+            >
+              Entrar
+            </Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
 
       <BackToSignIn
-        onpress={() => {
-          navigation.goBack;
+        onPress={() => {
+          navigation.goBack();
         }}
       >
         <Icon name="arrow-left" size={20} color="#fff" />

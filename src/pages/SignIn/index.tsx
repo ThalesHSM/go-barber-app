@@ -18,7 +18,7 @@ import getValidationErrors from "../../util/getValidationErrors";
 import { useAuth } from "../../context/AuthContext";
 
 import Input from "../../components/input";
-import Button from "../../components/Button";
+import Button from "../../components/button";
 
 import {
   Container,
@@ -117,15 +117,14 @@ const SignIn: React.FC = () => {
                 }}
                 secureTextEntry
               />
-
-              <Button
-                onPress={() => {
-                  formRef.current?.submitForm();
-                }}
-              >
-                Entrar
-              </Button>
             </Form>
+            <Button
+              onPress={() => {
+                formRef.current?.submitForm();
+              }}
+            >
+              Entrar
+            </Button>
 
             <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
@@ -135,7 +134,7 @@ const SignIn: React.FC = () => {
       </KeyboardAvoidingView>
 
       <CreateAccountButton
-        onpress={() => {
+        onPress={() => {
           navigation.navigate("SignUp");
         }}
       >

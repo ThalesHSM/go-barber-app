@@ -1,16 +1,21 @@
 import React from "react";
 
-import { View, Button } from "react-native";
-
 import { useAuth } from "../../context/AuthContext";
 
+import { Container, Header, HeaderTitle, UserName } from "./styles";
+
 const Dashboard: React.FC = () => {
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
 
   return (
-    <View style={{ flex: 1, justifyContent: "center" }}>
-      <Button title="Sair" onPress={signOut}></Button>
-    </View>
+    <Container>
+      <Header>
+        <HeaderTitle>
+          Bem vindo, {"\n"}
+          <UserName> Thales</UserName>
+        </HeaderTitle>
+      </Header>
+    </Container>
   );
 };
 
