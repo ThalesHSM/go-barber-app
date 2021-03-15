@@ -38,7 +38,7 @@ const SignUp: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
 
   const handleSignUp = useCallback(
-    async (data: object) => {
+    async (data: SignUpFormData) => {
       try {
         formRef.current?.setErrors({});
 
